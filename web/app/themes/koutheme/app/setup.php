@@ -48,7 +48,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
      */
     add_theme_support('post-thumbnails');
-
+    add_image_size('destacado', 780, 400, true);
     /**
      * Enable HTML5 markup support
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
@@ -125,4 +125,39 @@ add_action('after_setup_theme', function () {
     sage('blade')->compiler()->directive('asset', function ($asset) {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
+
+    /**
+     * estas directivas son para hacer llamdas a la query con blade
+     * Create @posts Blade directive
+     */
+    sage('blade')->compiler()->directive('posts', function () {
+        return '<?php while(have_posts()) : the_post(); ?>';
+    });
+
+    /**
+     * Create @endposts Blade directive
+     */
+    sage('blade')->compiler()->directive('endposts', function () {
+        return '<?php endwhile; ?>';
+    });
+
+    /**
+     * Create @query() Blade directive
+     */
+    sage('blade')->compiler()->directive('query', function ($args) {
+        $output = '<?php $bladeQuery = new WP_Query($args); ?>';
+        $output .= '<?php while ($bladeQuery->have_posts()) : ?>';
+        $output .= '<?php $bladeQuery->the_post(); ?>';
+
+        return $output;
+    });
+
+    /**
+     * Create @endquery Blade directive
+     */
+    sage('blade')->compiler()->directive('endquery', function () {
+        return '<?php endwhile; ?>';
+    });
 });
+
+
