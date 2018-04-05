@@ -1,28 +1,70 @@
-article.category-featured-home {
-  @include make-col-ready();
+.blog {
+  article.category-featured-home {
+    @include make-col-ready();
 
-  @include media-breakpoint-up(sm) {
-    header {
-      width: 70%;
-      float: left;
+    // padding: 15px;
+    // background-color: rgba($color: #fecd33, $alpha: 0.5);
+
+    @include media-breakpoint-up(sm) {
+      @include make-col(12);
+
+      header {
+        width: 70%;
+        float: left;
+      }
+
+      .entry-summary {
+        width: 28%;
+        float: left;
+        margin-left: 2%;
+      }
+    }
+
+    overflow: auto;
+  }
+}
+
+.category-seis-destacados-home,
+.category-conciertos,
+.category-discos,
+.category-videos,
+.blog {
+  article {
+    @include make-col-ready();
+
+    margin-top: 30px;
+
+    iframe {
+      max-width: 100%;
     }
 
     .entry-summary {
-      width: 28%;
-      float: left;
-      margin-left: 2%;
+      img {
+        margin-bottom: 15px;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(4);
+    }
+
+    @include media-breakpoint-up(xlg) {
+      @include make-col(6);
     }
   }
 
-  overflow: auto;
+  .embed-responsive {
+    margin-bottom: 15px;
+  }
 }
 
-article.category-4-destacados-home {
-  @include make-col-ready();
-
-  margin-top: 30px;
-
-  @include media-breakpoint-up(sm) {
-    @include make-col(4);
-  }
+.box {
+  background-color: rgba($color: #fecd33, $alpha: 0.5);
+  padding: 15px;
+  height: 100%;
+  overflow: auto;
 }

@@ -1,0 +1,5 @@
+.wrap {
+  @include media-breakpoint-up(sm) {
+    margin-top: 100px;
+  }
+}
