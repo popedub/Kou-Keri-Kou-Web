@@ -1,5 +1,10 @@
+body {
+  // padding-bottom: 30px;
+  background-image: url('../images/fondo-kou-2.jpg');
+}
+
 .wrap {
-  @include media-breakpoint-up(sm) {
-    margin-top: 100px;
-  }
+  margin-top: 100px;
+  padding-bottom: 30px;
+  background-color: #fff;
 }

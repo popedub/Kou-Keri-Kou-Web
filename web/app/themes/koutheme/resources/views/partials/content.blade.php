@@ -39,13 +39,14 @@
         <div class="embed-responsive embed-responsive-16by9">
           @php(the_field('embeds'))
         </div>
-      @endif
-
-      @if(get_field('videos'))
+      @elseif(get_field('videos'))
         <div class="embed-responsive embed-responsive-16by9">
           @php(the_field('videos'))
         </div>
+      @elseif(has_post_thumbnail())
+        @php(the_post_thumbnail('destacado', array('class' => 'img-fluid')))
       @endif
+
 
       @php(the_excerpt())
     @endif

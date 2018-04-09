@@ -30,4 +30,17 @@ class App extends Controller
         }
         return get_the_title();
     }
+    public function anio()
+    {
+        return date('Y');
+    }
+    public function links()
+    {
+        $links = [
+            'facebook' => 'https://www.facebook.com/koukerikouu/',
+            'instagram' => 'https://www.instagram.com/koukerikouu/',
+            'mail' => 'mailto:jordigonzalezguerra@gmail.com'
+        ];
+        return $links;
+    }
 }
