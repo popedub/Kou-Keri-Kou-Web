@@ -8,7 +8,7 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/app/themes/koutheme",
+  "publicPath": "/koukerikou/wp-content/themes/koutheme",
   "devUrl": "http://koukerikou.net",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
