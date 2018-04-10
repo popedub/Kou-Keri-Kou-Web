@@ -69,3 +69,9 @@
   height: 100%;
   overflow: auto;
 }
+
+.single {
+  article {
+    @include make-col-ready();
+  }
+}
